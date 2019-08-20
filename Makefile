@@ -5,7 +5,7 @@ JSONNETCMD=jsonnet
 JSONNETBUNDLERCMD=jb
 JSONNET_LIBS=vendor
 MANIFESTS_FOLDER=manifests
-FILENAME=example.jsonnet
+FILENAME=main.jsonnet
 
 all: clean build
 

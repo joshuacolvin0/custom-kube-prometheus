@@ -2,12 +2,8 @@ local kp =
   (import 'kube-prometheus/kube-prometheus.libsonnet') +
   (import 'kube-prometheus/kube-prometheus.libsonnet') +
   (import 'kube-prometheus/kube-prometheus-kops.libsonnet') +
-  (import 'kube-prometheus/kube-prometheus-kops-coredns.libsonnet')
-  {
-    _config+:: {
-      namespace: 'monitoring',
-    },
-  };
+  (import 'kube-prometheus/kube-prometheus-kops-coredns.libsonnet') +
+  (import 'config.jsonnet');
 
 { ['00namespace-' + name]: kp.kubePrometheus[name] for name in std.objectFields(kp.kubePrometheus) } +
 { ['0prometheus-operator-' + name]: kp.prometheusOperator[name] for name in std.objectFields(kp.prometheusOperator) } +
