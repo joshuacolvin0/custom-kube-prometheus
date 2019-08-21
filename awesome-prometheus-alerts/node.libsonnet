@@ -19,7 +19,7 @@
             },
           },
           {
-            alert: 'UnusualNetworkThroughputIn',
+            alert: 'NodeUnusualNetworkThroughputIn',
             expr: |||
                 sum by (instance) (irate(node_network_receive_bytes_total[2m])) / 1024 / 1024 > 100
             ||| % $._config,
@@ -33,7 +33,7 @@
             },
           },
           {
-            alert: 'UnusualNetworkThroughputOut',
+            alert: 'NodeUnusualNetworkThroughputOut',
             expr: |||
                 sum by (instance) (irate(node_network_transmit_bytes_total[2m])) / 1024 / 1024 > 100
             ||| % $._config,
@@ -47,7 +47,7 @@
             },
           },
           {
-            alert: 'UnusualDiskReadRate',
+            alert: 'NodeUnusualDiskReadRate',
             expr: |||
                 sum by (instance) (irate(node_disk_read_bytes_total[2m])) / 1024 / 1024 > 50
             ||| % $._config,
@@ -61,7 +61,7 @@
             },
           },
           {
-            alert: 'UnusualDiskWriteRate',
+            alert: 'NodeUnusualDiskWriteRate',
             expr: |||
                 sum by (instance) (irate(node_disk_written_bytes_total[2m])) / 1024 / 1024 > 50
             ||| % $._config,
@@ -75,7 +75,7 @@
             },
           },
           {
-            alert: 'OutOfDiskSpace',
+            alert: 'NodeOutOfDiskSpace',
             expr: |||
                 node_filesystem_free_bytes{mountpoint ="/rootfs"} / node_filesystem_size_bytes{mountpoint ="/rootfs"} * 100 < 10
             ||| % $._config,
@@ -89,7 +89,7 @@
             },
           },
           {
-            alert: 'OutOfInodes',
+            alert: 'NodeOutOfInodes',
             expr: |||
                 node_filesystem_files_free{mountpoint ="/rootfs"} / node_filesystem_files{mountpoint ="/rootfs"} * 100 < 10
             ||| % $._config,
@@ -103,7 +103,7 @@
             },
           },
           {
-            alert: 'UnusualDiskReadLatency',
+            alert: 'NodeUnusualDiskReadLatency',
             expr: |||
                 rate(node_disk_read_time_seconds_total[1m]) / rate(node_disk_reads_completed_total[1m]) > 100
             ||| % $._config,
@@ -117,7 +117,7 @@
             },
           },
           {
-            alert: 'UnusualDiskWriteLatency',
+            alert: 'NodeUnusualDiskWriteLatency',
             expr: |||
                 rate(node_disk_write_time_seconds_total[1m]) / rate(node_disk_writes_completed_total[1m]) > 100
             ||| % $._config,
@@ -145,7 +145,7 @@
             },
           },
           {
-            alert: 'ContextSwitching',
+            alert: 'NodeContextSwitching',
             expr: |||
                 rate(node_context_switches_total[5m]) > 1000
             ||| % $._config,
@@ -159,7 +159,7 @@
             },
           },
           {
-            alert: 'SwapIsFillingUp',
+            alert: 'NodeSwapIsFillingUp',
             expr: |||
                 (1 - (node_memory_SwapFree_bytes / node_memory_SwapTotal_bytes)) * 100 > 80
             ||| % $._config,
@@ -173,7 +173,7 @@
             },
           },
           {
-            alert: 'SystemdServiceFailed',
+            alert: 'NodeSystemdServiceFailed',
             expr: |||
                 node_systemd_unit_state{state="failed"} == 1
             ||| % $._config,
