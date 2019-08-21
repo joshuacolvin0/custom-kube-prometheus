@@ -2,7 +2,7 @@
   prometheusAlerts+:: {
     groups+: [
       {
-        name: 'coredns',
+        name: 'awesome-coredns',
         rules: [
           {
             alert: 'CorednsPanicCount',

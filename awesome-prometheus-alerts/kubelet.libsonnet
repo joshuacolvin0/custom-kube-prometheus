@@ -2,7 +2,7 @@
   prometheusAlerts+:: {
     groups+: [
       {
-        name: 'kubelet',
+        name: 'awesome-kubelet',
         rules: [
           {
             alert: 'VolumeOutOfDiskSpace',
