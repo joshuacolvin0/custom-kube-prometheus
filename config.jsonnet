@@ -1,5 +1,11 @@
 {
   _config+:: {
+    // Namespace used in manifests
+    namespace: "monitoring",
+
+    // Etcd selector from etcd-io/etcd/Documentation/etcd-mixin
+    etcd_selector: 'job=~".*etcd.*"',
+
     // Selectors are inserted between {} in Prometheus queries.
     cadvisorSelector: 'job="kubelet"',
     kubeletSelector: 'job="kubelet"',
