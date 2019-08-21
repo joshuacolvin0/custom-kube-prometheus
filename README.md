@@ -34,9 +34,9 @@ make install-gojsontoyaml
 
 ## [Manifests](#manifests)
 
-- Generate new manifests after changing your input file
+- Generate new manifests after changing your input file. This process takes around 10s to finish.
 ```bash
-make FILENAME=example.jsonnet MANIFESTS_FOLDER=manifests
+make FILENAME=main.jsonnet MANIFESTS_FOLDER=manifests
 ```
 
 ## [Dependencies](#dependencies)
