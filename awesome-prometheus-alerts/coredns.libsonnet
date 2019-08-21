@@ -7,7 +7,7 @@
           {
             alert: 'CorednsPanicCount',
             expr: |||
-                increase(coredns_panic_count_total[10m])
+                increase(coredns_panic_count_total[10m]) > 0
             ||| % $._config,
             'for': '3m',
             labels: {
