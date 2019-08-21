@@ -9,16 +9,20 @@ FILENAME=main.jsonnet
 
 all: clean build
 
-
+.PHONY: clean
 clean:
 		rm -rf $(MANIFESTS_FOLDER)
 		mkdir $(MANIFESTS_FOLDER)
+		
+.PHONY: build
 build: 
 		$(JSONNETCMD) -J $(JSONNET_LIBS) -m $(MANIFESTS_FOLDER) $(FILENAME) \
 			| xargs -I{} sh -c 'cat {} \
 			| gojsontoyaml > {}.yaml; rm -f {}' -- {}
+
+.PHONY: update
 update:
-		$(JSONNETBUNDLER) update
+		$(JSONNETBUNDLERCMD) update
 
 
 install-gojsontoyaml:
