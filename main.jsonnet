@@ -3,6 +3,7 @@ local kp =
   (import 'kube-prometheus/kube-prometheus-kops.libsonnet') +
   (import 'kube-prometheus/kube-prometheus-kops-coredns.libsonnet') +
   (import 'etcd-mixin/mixin.libsonnet') +
+  (import 'awesome-prometheus-alerts/rules.libsonnet') +
   (import 'config.jsonnet');
 
 { ['00namespace-' + name]: kp.kubePrometheus[name] for name in std.objectFields(kp.kubePrometheus) } +
