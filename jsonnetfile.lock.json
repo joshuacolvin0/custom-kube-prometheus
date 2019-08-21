@@ -48,7 +48,7 @@
                     "subdir": "grafana-builder"
                 }
             },
-            "version": "189d685069d896a8cdcc69f9432f982490a2bbd4"
+            "version": "565bf6b51d636e0efe4add39f2ab8e2b1abb731f"
         },
         {
             "name": "grafana",
@@ -78,7 +78,7 @@
                     "subdir": "Documentation/etcd-mixin"
                 }
             },
-            "version": "43fe8c3ee02693053ea1e1a2f9350d9b39c80721"
+            "version": "8037e6e08727d4a17649f782cb4dbc482b8fe780"
         }
     ]
 }
